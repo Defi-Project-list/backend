@@ -14,7 +14,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 2002
-      REDIS_URL: redis://host.docker.internal:6379
+      REDIS_URL: redis://10.0.10.10:6379
     ports:
       - 2002:2002
 
