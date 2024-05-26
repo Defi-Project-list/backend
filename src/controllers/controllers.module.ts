@@ -1,9 +1,11 @@
-import { Module } from "@nestjs/common";
-import { JoinCodeModule } from "./join-code";
+import { Module } from "@nestjs/common"
+import { JoinCodeModule } from "./join-code"
+import { SuiModule } from "./sui"
 
 @Module({
     imports: [
-        JoinCodeModule
+        JoinCodeModule,
+        SuiModule
     ]
 })
 export class ControllersModule {
