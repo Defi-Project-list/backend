@@ -8,11 +8,11 @@ export class ShellService {
         return new Promise((resolve, reject) => {
             sysExec(
                 command,
-                {
-                    shell: getEnvValue({
-                        development: "powershell.exe",
-                    }),
-                },
+                // {
+                //     shell: getEnvValue({
+                //         development: "powershell.exe",
+                //     }),
+                // },
                 (error, stdout, stderr) => {
                     if (error) {
                         reject(error)
@@ -28,9 +28,9 @@ export class ShellService {
 
     execSync(command: string): string {
         return sysExecSync(command, {
-            shell: getEnvValue({
-                development: "powershell.exe",
-            }),
+            // shell: getEnvValue({
+            //     development: "powershell.exe",
+            // }),
             encoding: "utf-8"
         })
     }
