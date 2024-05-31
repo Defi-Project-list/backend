@@ -17,8 +17,8 @@ jobs:
 
     - name: Create new directory & copy files
       run: |
-        mkdir -p -r $DESTINATION_DIR
-        cp -r .  $DESTINATION_DIR
+        mkdir -p $DESTINATION_DIR
+        cp -r . $DESTINATION_DIR
         
     - name: Install dependencies & build
       run: | 
