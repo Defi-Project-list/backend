@@ -15,25 +15,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4 
 
-    - name: Install dependencies & build
-      run: | 
-        npm install
-        npn run build
-
     - name: Create new directory & copy files
       run: |
         mkdir -p -r $DESTINATION_DIR
+        cp -r .  $DESTINATION_DIR
         
-        mkdir -p  $DESTINATION_DIR/dist
-        cp -r /dist  $DESTINATION_DIR/dist
-        
-        mkdir -p  $DESTINATION_DIR/node_modules
-        cp -r /node_modules  $DESTINATION_DIR/node_modules
-
-        cp -r package.json  $DESTINATION_DIR/package.json
-        cp -r /package-lock.json  $DESTINATION_DIR/package-lock.json
-
-        mkdir -p  $DESTINATION_DIR/move
-        cp -r /node_modules  $DESTINATION_DIR/node_modules
-
- 
+    - name: Install dependencies & build
+      run: | 
+        cd $DESTINATION_DIR
+        npm install
+        npn run build
