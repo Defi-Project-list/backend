@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4 
+    env:
+      DESTINATION_DIR: "/services/cross-chain-meme-creator-backend"
+
 
     - name: Install dependencies & build
       run: | 
@@ -20,5 +23,7 @@ jobs:
 
     - name: Create new directory & copy files
       run: |
-        mkdir -p /cross-chain-meme-creator-backend
-        copy -r /dist /cross-chain-meme-creator-backend/dist
+        mkdir -p -r $DESTINATION_DIR
+      
+        mkdir -p  $DESTINATION_DIR/dist
+        copy -r /dist  $DESTINATION_DIR/dist
