@@ -8,7 +8,7 @@ on:
 jobs:
   compile:
     runs-on: self-hosted
-    # environment: docker
+    environment: compile
     steps:
     - name: Checkout code
       uses: actions/checkout@v4 
@@ -23,6 +23,5 @@ jobs:
     - name: Create new directory & copy files
       run: |
         mkdir -p -r $DESTINATION_DIR
-      
         mkdir -p  $DESTINATION_DIR/dist
         copy -r /dist  $DESTINATION_DIR/dist
