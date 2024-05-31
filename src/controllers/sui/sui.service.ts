@@ -19,7 +19,7 @@ export class SuiService {
         iconUrl,
         totalSupply
     }: GetTokenByteCodeRequestBody): Promise<GetTokenByteCodeResponseData> {
-        const tokenModulePath = join(process.cwd(), "src", "controllers", "sui", "modules", "token")
+        const tokenModulePath = join(process.cwd(), "sui-modules", "token")
         const sourcePath = join(tokenModulePath, "sources", "token.move")
         const source = readFileSync(sourcePath, "utf-8")
         let sourceCopy = source.slice()

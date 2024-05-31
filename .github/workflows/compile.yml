@@ -1,0 +1,24 @@
+name: Compile
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  compile:
+    runs-on: self-hosted
+    environment: compile
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4 
+
+    - name: Install dependencies & build
+      run: | 
+        npm install
+        npn run build
+
+    - name: Create new directory & copy files
+      run: |
+        mkdir -p /cross-chain-meme-creator-backend
+        copy -r /dist /cross-chain-meme-creator-backend/dist

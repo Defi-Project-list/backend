@@ -6,11 +6,11 @@ module token::TOKEN {
     public struct TOKEN has drop {}
 
     fun init(witness: TOKEN, ctx: &mut TxContext) {
-        let template_decimal: u8 = 0;
-        let template_name: vector<u8> = b"USD Tether";
-        let template_symbol: vector<u8> = b"USDT";
-        let template_description: vector<u8> = vector::empty<u8>();
-        let template_icon_url: vector<u8> = vector::empty<u8>();
+        let template_decimal: u8 = 8;
+        let template_name: vector<u8> = b"UST Tether";
+        let template_symbol: vector<u8> = b"CPEPE";
+        let template_description: vector<u8> = b"";
+        let template_icon_url: vector<u8> = b"";
         let template_total_supply: u64 = 10000000000;
 
         let icon_url : Option<Url>;
