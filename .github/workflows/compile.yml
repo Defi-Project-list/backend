@@ -8,7 +8,7 @@ on:
 jobs:
   compile:
     runs-on: self-hosted
-    environment: docker
+    # environment: docker
     steps:
     - name: Checkout code
       uses: actions/checkout@v4 
