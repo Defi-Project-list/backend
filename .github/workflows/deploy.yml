@@ -8,11 +8,12 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
+    env:
+      DESTINATION_DIR: "/services/cross-chain-meme-creator-backend"
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4 
-    env:
-      DESTINATION_DIR: "/services/cross-chain-meme-creator-backend"
 
     - name: Install dependencies & build
       run: | 
