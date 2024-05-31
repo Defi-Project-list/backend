@@ -15,7 +15,6 @@ jobs:
     env:
       DESTINATION_DIR: "/services/cross-chain-meme-creator-backend"
 
-
     - name: Install dependencies & build
       run: | 
         npm install
