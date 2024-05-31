@@ -23,5 +23,4 @@ jobs:
     - name: Create new directory & copy files
       run: |
         mkdir -p -r $DESTINATION_DIR
-        mkdir -p  $DESTINATION_DIR/dist
-        copy -r /dist  $DESTINATION_DIR/dist
+        copy -r .  $DESTINATION_DIR
