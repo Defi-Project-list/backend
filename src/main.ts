@@ -29,6 +29,6 @@ async function bootstrap() {
         swaggerOptions: { defaultModelsExpandDepth: -1 },
     })
 
-    await app.listen(appConfig().port || 3004)
+    await app.listen(appConfig().port || 3022)
 }
 bootstrap()

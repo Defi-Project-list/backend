@@ -30,14 +30,15 @@ export class SuiService {
                 console.log(sourceCopy.indexOf(searchValue))
                 sourceCopy = sourceCopy.replace(searchValue, replaceValue)
             }
-            console.log(sourceCopy)
+        
             replace("let template_decimal: u8 = 0;", `let template_decimal: u8 = ${decimals};`)
-            replace("let template_name: vector<u8> = b\"USD Tether\";", `let template_name: vector<u8> = b"${name}";`)
-            replace("let template_symbol: vector<u8> = b\"USDT\";", `let template_symbol: vector<u8> = b"${symbol}";`)
-            replace("let template_description: vector<u8> = vector::empty<u8>();", `let template_description: vector<u8> = b"${description}";`)
-            replace("let template_icon_url: vector<u8> = vector::empty<u8>();", `let template_icon_url: vector<u8> = b"${iconUrl}";`)
-            replace("let template_total_supply: u64 = 10000000000;", `let template_total_supply: u64 = ${totalSupply};`)
+            replace("let template_name: vector<u8> = b\"\";", `let template_name: vector<u8> = b"${name}";`)
+            replace("let template_symbol: vector<u8> = b\"\";", `let template_symbol: vector<u8> = b"${symbol}";`)
+            replace("let template_description: vector<u8> = b\"\";", `let template_description: vector<u8> = b"${description}";`)
+            replace("let template_icon_url: vector<u8> = b\"\";", `let template_icon_url: vector<u8> = b"${iconUrl}";`)
+            replace("let template_total_supply: u64 = 0;", `let template_total_supply: u64 = ${totalSupply};`)
 
+            console.log(sourceCopy)
             writeFileSync(sourcePath, sourceCopy)
 
             const { modules, dependencies, digest } = JSON.parse(
