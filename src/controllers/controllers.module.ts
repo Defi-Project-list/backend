@@ -1,13 +1,7 @@
 import { Module } from "@nestjs/common"
-import { JoinCodeModule } from "./join-code"
-import { SuiModule } from "./sui"
+import { ContractsModule } from "./contracts"
 
 @Module({
-    imports: [
-        JoinCodeModule,
-        SuiModule
-    ]
+    imports: [ContractsModule],
 })
-export class ControllersModule {
-
-}
+export class ControllersModule {}

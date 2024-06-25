@@ -1,6 +1,6 @@
 import { Module, ValidationPipe } from "@nestjs/common"
 import { ConfigModule } from "@nestjs/config"
-import { appConfig, sslConfig, urlConfig } from "@config"
+import { appConfig, sslConfig } from "@config"
 import { GlobalModule } from "@global"
 import { ControllersModule } from "./controllers"
 import { APP_PIPE } from "@nestjs/core"
@@ -11,7 +11,7 @@ import { APP_PIPE } from "@nestjs/core"
             {
                 isGlobal: true,
                 expandVariables: true,
-                load: [appConfig, urlConfig, sslConfig] 
+                load: [appConfig, sslConfig] 
             }
         ),
         GlobalModule,
