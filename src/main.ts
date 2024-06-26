@@ -6,6 +6,7 @@ import { getEnvValue } from "@common"
 import { HttpsOptions } from "@nestjs/common/interfaces/external/https-options.interface"
 
 async function bootstrap() {
+    console.log(sslConfig().cert)
     const app = await NestFactory.create(AppModule, {
         httpsOptions: getEnvValue<HttpsOptions>({
             development: undefined,
