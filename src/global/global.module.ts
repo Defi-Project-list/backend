@@ -1,9 +1,9 @@
 import { Global, Module } from "@nestjs/common"
-import { ShellService, SuiCliService } from "./services"
+import { AptosCliService, ShellService, SuiCliService } from "./services"
 
 @Global()
 @Module({
-    exports: [ShellService, SuiCliService],
-    providers: [ShellService, SuiCliService],
+    exports: [ShellService, SuiCliService, AptosCliService],
+    providers: [ShellService, SuiCliService, AptosCliService],
 })
 export class GlobalModule {}

@@ -1,7 +1,7 @@
 import { ShellService } from "./shell.service"
 import { Injectable } from "@nestjs/common"
 
-export interface SuiBuildArgs {
+export interface BuildArgs {
   path?: string;
   dumbBytecodeAsBase64?: boolean;
 }
@@ -10,7 +10,7 @@ export interface SuiBuildArgs {
 export class SuiCliService {
     constructor(private readonly shellService: ShellService) {}
 
-    build(args?: SuiBuildArgs): string {
+    build(args?: BuildArgs): string {
         const { path, dumbBytecodeAsBase64 } = { ...args }
 
         const pathArg = path ? `--path ${path}` : ""
