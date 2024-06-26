@@ -20,7 +20,7 @@ export class ContractsController {
     ): Promise<GetSuiPublishTokenBytecodeResponseData> {
         return await this.contractsService.getSuiPublishTokenBytecode(body)
     }
-
+ 
     @ApiOkResponse({ type: GetAptosPublishTokenPayloadResponseData })
     @Post("get-aptos-publish-token-payload")
     async getAptosPublishTokenPayload(
