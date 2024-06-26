@@ -9,7 +9,7 @@ import {
 import { ApiOkResponse, ApiTags } from "@nestjs/swagger"
 
 @ApiTags("Contracts")
-@Controller("v1/api/contracts")
+@Controller("api/v1/contracts")
 export class ContractsController {
     constructor(private contractsService: ContractsService) { }
 
