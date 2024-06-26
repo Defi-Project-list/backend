@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync } from "fs"
 import {
     GetSuiTokenBytecodeRequestBody,
     GetSuiTokenBytecodeResponseData,
-} from "./contracts.dto"
+} from "./dtos"
 import { pathConfig } from "@config"
 
 @Injectable()

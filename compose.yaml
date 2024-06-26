@@ -11,8 +11,8 @@ services:
   server:
     build:
       context: .
-    environment:
-      NODE_ENV: production
+    env_file:
+      - .env.docker
     ports:
       - 2765:2765
 

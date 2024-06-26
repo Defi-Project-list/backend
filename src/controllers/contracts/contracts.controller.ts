@@ -3,7 +3,7 @@ import { ContractsService } from "./contracts.service"
 import {
     GetSuiTokenBytecodeRequestBody,
     GetSuiTokenBytecodeResponseData,
-} from "./contracts.dto"
+} from "./dtos"
 import { ApiOkResponse, ApiTags } from "@nestjs/swagger"
 
 @ApiTags("Contracts")

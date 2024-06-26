@@ -49,9 +49,6 @@ RUN npm run build
 # where the necessary files are copied from the build stage.
 FROM base as final
 
-# Use production node environment by default.
-ENV NODE_ENV production
-
 # Copy package.json so that package manager commands can be used.
 COPY package.json .
 
