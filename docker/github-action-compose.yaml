@@ -1,0 +1,14 @@
+
+services:
+  server:
+    build:
+      context: ..
+    image: cross-chain-meme-creator-backend:latest
+    container_name: cross-chain-meme-creator-backend
+    environment:
+      SSL_CERT: ${SSL_CERT}
+      SSL_KEY: ${SSL_KEY}
+      PORT: ${PORT}
+      NODE_ENV: ${NODE_ENV}
+    ports:
+      - 2765:2765

@@ -11,9 +11,11 @@ RUN brew install aptos
 RUN brew install git
 
 #Copy & clone contracts
-RUN mkdir -p sources
-RUN git clone https://github.com/Cross-chain-Meme-Token-Creator/sui-contracts.git contracts/sui
-RUN git clone https://github.com/Cross-chain-Meme-Token-Creator/aptos-contracts.git contracts/aptos
+RUN mkdir -p sources/sui
+ADD "https://github.com/Cross-chain-Meme-Token-Creator/sui-contracts.git" contracts/sui
+
+RUN mkdir -p sources/aptos
+ADD "https://github.com/Cross-chain-Meme-Token-Creator/aptos-contracts.git" contracts/aptos
 
 ################################################################################
 # Create a stage for installing production dependecies.
@@ -56,6 +58,9 @@ COPY package.json .
 # the built application from the build stage into the image.
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/dist ./dist
+
+#work as root user
+USER root
 
 # Expose the port that the application listens on.
 EXPOSE 2765
