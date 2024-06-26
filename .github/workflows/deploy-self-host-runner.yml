@@ -15,9 +15,9 @@ jobs:
  
     - name: Run `docker compose`
       env:
-        SSL_CERT: ${secrets.SSL_CERT}
-        SSL_KEY: ${secrets.SSL_KEY}
-        PORT: ${vars.PORT}
-        NODE_ENV: ${vars.NODE_ENV}
+        SSL_CERT: ${{secrets.SSL_CERT}}
+        SSL_KEY: ${{secrets.SSL_KEY}}
+        PORT: ${{vars.PORT}}
+        NODE_ENV: ${{vars.NODE_ENV}}
   
       run: docker compose -f docker/github-action-compose.yaml -p cross-chain-meme-creator-backend up --build -d 
