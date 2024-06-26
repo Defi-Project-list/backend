@@ -20,7 +20,7 @@ export class SuiCliService {
             : ""
 
         return this.shellService.executeSync(
-            `sui move build ${pathArg} ${dumbBytecodeAsBase64Arg}`,
+            `sui move build ${pathArg} ${dumbBytecodeAsBase64Arg} --skip-fetch-latest-git-deps`,
         )
     }
 }

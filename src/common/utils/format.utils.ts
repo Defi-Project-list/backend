@@ -1,0 +1,1 @@
+export const toHex = (value: string) => Buffer.from(value, "utf-8").toString("hex") 
